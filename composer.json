@@ -1,0 +1,26 @@
+{
+    "name": "solenoid/smtp",
+    "description": "SMTP client library",
+    "type": "library",
+    "keywords": ["smtp","client"],
+    "homepage": "https://github.com/Solenoid-IT/php-smtp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pier Niccolò Giannelli",
+            "email": "pierniccologiannelli@gmail.com",
+            "homepage": "https://www.solenoid.it",
+            "role": "Full Stack Web Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "phpmailer/phpmailer": "^6.8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Solenoid\\SMTP\\": "src",
+            "PHPMailer\\PHPMailer\\": "src"
+        }
+    }
+}
