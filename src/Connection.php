@@ -14,6 +14,11 @@ use \Solenoid\SMTP\Retry;
 
 class Connection
 {
+    const ENCRYPTION_SMTPS    = 'SMTPS';
+    const ENCRYPTION_STARTTLS = 'STARTTLS';
+
+
+
     private array  $errors;
     private Config $config;
 
@@ -48,7 +53,7 @@ class Connection
         string $username,
         string $password,
 
-        string $encryption_type  = 'tls',
+        string $encryption_type  = self::ENCRYPTION_STARTTLS,
 
         string $charset_encoding = 'UTF-8',
 
@@ -179,41 +184,7 @@ class Connection
         ]
         ;
 
-        $this->config = Config::create
-        (
-            $host,
-            $port,
-
-            $username,
-            $password,
-
-            $encryption_type,
-
-            $charset_encoding,
-
-            $debug
-        )
-        ;
-    }
-
-    # Returns [Connection]
-    public static function create
-    (
-        string $host             = 'localhost',
-        int    $port             = 465,
-
-        string $username,
-        string $password,
-
-        string $encryption_type  = 'tls',
-
-        string $charset_encoding = 'UTF-8',
-
-        bool   $debug            = false
-    )
-    {
-        // Returning the value
-        return new Connection
+        $this->config = new Config
         (
             $host,
             $port,

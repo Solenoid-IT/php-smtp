@@ -13,6 +13,15 @@ use \PHPMailer\PHPMailer\SMTP;
 
 class Config
 {
+    private static $encryptions =
+    [
+        'SMTPS'    => PHPMailer::ENCRYPTION_SMTPS,
+        'STARTTLS' => PHPMailer::ENCRYPTION_STARTTLS
+    ]
+    ;
+
+
+
     public array $properties;
 
 
@@ -26,7 +35,7 @@ class Config
         string $username,
         string $password,
 
-        string $encryption_type  = 'tls',
+        string $encryption_type  = 'STARTTLS',
 
         string $charset_encoding = 'UTF-8',
 
@@ -47,7 +56,7 @@ class Config
         $this->properties['Username']   = $username;
         $this->properties['Password']   = $password;
 
-        $this->properties['SMTPSecure'] = $encryption_type;
+        $this->properties['SMTPSecure'] = self::$encryptions[ $encryption_type ];
 
         $this->properties['CharSet']    = $charset_encoding;
 
@@ -58,40 +67,6 @@ class Config
             // (Setting the value)
             $this->properties['SMTPDebug'] = SMTP::DEBUG_SERVER;
         }
-    }
-
-    # Returns [Config]
-    public static function create
-    (
-        string $host             = 'localhost',
-        int    $port             = 465,
-
-        string $username,
-        string $password,
-
-        string $encryption_type  = 'tls',
-
-        string $charset_encoding = 'UTF-8',
-
-        bool   $debug            = false
-    )
-    {
-        // Returning the value
-        return new Config
-        (
-            $host,
-            $port,
-
-            $username,
-            $password,
-
-            $encryption_type,
-
-            $charset_encoding,
-
-            $debug
-        )
-        ;
     }
 
 
