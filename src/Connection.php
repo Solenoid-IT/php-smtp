@@ -63,119 +63,119 @@ class Connection
         // (Getting the values)
         $this->errors        =
         [
-            'You must provide at least one recipient email address.' => Error::create
+            'You must provide at least one recipient email address.' => new Error
             (
                 0,
                 'NO_RECEIVER',
                 'Receiver list is empty'
             ),
 
-            ' mailer is not supported.'                              => Error::create
+            ' mailer is not supported.'                              => new Error
             (
                 1,
                 'MAILER_NOT_SUPPORTED',
                 'Mailer is not supported'
             ),
 
-            'Could not execute: '                                    => Error::create
+            'Could not execute: '                                    => new Error
             (
                 2,
                 'EXECUTION_FAILED',
                 'Execution is failed'
             ),
 
-            'Could not instantiate mail function.'                   => Error::create
+            'Could not instantiate mail function.'                   => new Error
             (
                 3,
                 'MF_INSTANTIATION_FAILED',
                 'Unable to instantiate mail function'
             ),
 
-            'SMTP Error: Could not authenticate.'                    => Error::create
+            'SMTP Error: Could not authenticate.'                    => new Error
             (
                 4,
                 'AUTH_FAILED',
                 'Authentication is failed'
             ),
 
-            'The following From address failed: '                    => Error::create
+            'The following From address failed: '                    => new Error
             (
                 5,
                 'FROM_FAILED',
                 'From is not valid'
             ),
 
-            'SMTP Error: The following recipients failed: '          => Error::create
+            'SMTP Error: The following recipients failed: '          => new Error
             (
                 6,
                 'RECEIVERS_FAILED',
                 'Unable to send the mail to the receivers'
             ),
 
-            'SMTP Error: Data not accepted.'                         => Error::create
+            'SMTP Error: Data not accepted.'                         => new Error
             (
                 7,
                 'DATA_NOT_ACCEPTED',
                 'Data is not accepted'
             ),
 
-            'SMTP Error: Could not connect to SMTP host.'            => Error::create
+            'SMTP Error: Could not connect to SMTP host.'            => new Error
             (
                 8,
                 'SERVER_UNREACHABLE',
                 'Unable to reach the server'
             ),
 
-            'Could not access file: '                                => Error::create
+            'Could not access file: '                                => new Error
             (
                 9,
                 'FILE_ACCESS_FAILED',
                 'Unable to access to the file'
             ),
 
-            'File Error: Could not open file: '                      => Error::create
+            'File Error: Could not open file: '                      => new Error
             (
                 10,
                 'FILE_OPEN_FAILED',
                 'Unable to open the file'
             ),
 
-            'Unknown encoding: '                                     => Error::create
+            'Unknown encoding: '                                     => new Error
             (
                 11,
                 'ENCODING_NOT_RECOGNIZED',
                 'Encoding not recognized'
             ),
 
-            'Signing Error: '                                        => Error::create
+            'Signing Error: '                                        => new Error
             (
                 12,
                 'SIGNING_FAILED',
                 'Unable to sign'
             ),
 
-            'SMTP server error: '                                    => Error::create
+            'SMTP server error: '                                    => new Error
             (
                 13,
                 'SERVER_ERROR',
                 'Server error'
             ),
 
-            'Message body empty'                                     => Error::create
+            'Message body empty'                                     => new Error
             (
                 14,
                 'EMPTY_BODY',
                 'Mail body is empty'
             ),
 
-            'Invalid address'                                        => Error::create
+            'Invalid address'                                        => new Error
             (
                 15,
                 'INVALID_ADDRESS',
                 'Address is not valid'
             ),
 
-            'Cannot set or reset variable: '                         => Error::create
+            'Cannot set or reset variable: '                         => new Error
             (
                 16,
                 'VARIABLE_SET_FAILED',

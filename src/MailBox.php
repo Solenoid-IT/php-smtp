@@ -20,13 +20,6 @@ class MailBox
         $this->email = $email;
         $this->name  = $name;
     }
-
-    # Returns [MailBox]
-    public static function create (string $email, string $name = '')
-    {
-        // Returning the value
-        return new MailBox( $email, $name );
-    }
 }
 
 

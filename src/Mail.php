@@ -59,42 +59,6 @@ class Mail
         $this->body            = $body;
         $this->attachment_list = $attachment_list;
     }
-
-    # Returns [Mail]
-    public static function create
-    (
-        MailBox  $sender,
-
-        array    $receiver_list,
-        
-        array    $cc_list         = [],
-        array    $bcc_list        = [],
-
-        array    $reply_to_list   = [],
-
-        string   $subject,
-        MailBody $body,
-        array    $attachment_list = []
-    )
-    {
-        // Returning the value
-        return new Mail
-        (
-            $sender,
-
-            $receiver_list,
-
-            $cc_list,
-            $bcc_list,
-
-            $reply_to_list,
-
-            $subject,
-            $body,
-            $attachment_list
-        )
-        ;
-    }
 }
 
 

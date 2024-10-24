@@ -33,28 +33,6 @@ class MailAttachment
         $this->type        = $type;
         $this->disposition = $disposition;
     }
-
-    # Returns [MailAttachment]
-    public static function create
-    (
-        string $content,
-        string $name        = '',
-        string $encoding    = 'base64',
-        string $type        = '',
-        string $disposition = 'attachment'
-    )
-    {
-        // Returning the value
-        return new MailAttachment
-        (
-            $content,
-            $name,
-            $encoding,
-            $type,
-            $disposition
-        )
-        ;
-    }
 }
 
 

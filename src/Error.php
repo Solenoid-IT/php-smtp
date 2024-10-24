@@ -23,13 +23,6 @@ class Error
         $this->description = $description;
     }
 
-    # Returns [Error]
-    public static function create (int $code, string $name, string $description = '')
-    {
-        // Returning the value
-        return new Error( $code, $name, $description );
-    }
-
 
 
     # Returns [assoc]

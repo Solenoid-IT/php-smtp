@@ -25,22 +25,6 @@ class MailBody
         $this->html = $html;    
     }
 
-    # Returns [MailBody]
-    public static function create
-    (
-        string $text = '',
-        string $html = ''
-    )
-    {
-        // Returning the value
-        return new MailBody
-        (
-            $text,
-            $html
-        )
-        ;
-    }
-
 
 
     # Returns [self]
