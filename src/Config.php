@@ -22,6 +22,10 @@ class Config
 
 
 
+    public string $protocol;
+    public string $host;
+    public int    $port;
+
     public array $properties;
 
 
@@ -42,6 +46,13 @@ class Config
         bool   $debug            = false
     )
     {
+        // (Getting the values)
+        $this->protocol = $encryption_type;
+        $this->host     = $host;
+        $this->port     = $port;
+
+
+
         // (Setting the value)
         $this->properties = [];
 
@@ -92,6 +103,15 @@ class Config
 
         // Returning the value
         return $mailer;
+    }
+
+
+
+    # Returns [string]
+    public function __toString ()
+    {
+        // Returning the value
+        return $this->protocol . '://' . $this->host . ':' . $this->port;
     }
 }
 

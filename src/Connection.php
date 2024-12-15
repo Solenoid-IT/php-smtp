@@ -320,6 +320,15 @@ class Connection
         // Returning the value
         return true;
     }
+
+
+
+    # Returns [string]
+    public function __toString ()
+    {
+        // Returning the value
+        return (string) $this->config;
+    }
 }
 
 
