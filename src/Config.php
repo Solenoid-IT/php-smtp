@@ -47,7 +47,7 @@ class Config
     )
     {
         // (Getting the values)
-        $this->protocol = $encryption_type;
+        $this->protocol = strtolower( $encryption_type );
         $this->host     = $host;
         $this->port     = $port;
 
